@@ -1,0 +1,15 @@
+[Unit]
+Description=Monitors a local directory moves files to Rclone-support cloud storage
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/xxxxx/yyyyy/bbbbb -f=drive-chunk-size=2048 -l INFO -p 10 -s /xxxxx/yyyyy rrrrr:ppppp
+Restart=on-abort
+RestartSec=5
+StartLimitInterval=30s
+StartLimitBurst=3
+
+[Install]
+WantedBy=default.target
